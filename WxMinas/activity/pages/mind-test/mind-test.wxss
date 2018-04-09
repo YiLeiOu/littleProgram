@@ -1,0 +1,89 @@
+/* pages/testYouself/testYouself.wxss */
+.wrap{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.exemplImg{
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.testImg{
+  width: 100%;
+}
+
+.userInfo{
+  position: fixed;
+  z-index: 100;
+  top: 50%;
+  left: 17%;
+  width: 66%;
+}
+
+.userInput{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  border: 1rpx solid #dbdbdb;
+  border-radius: 16rpx;
+  background: #0d153d;
+}
+
+.explainText{
+  display: block;
+  width: 28%;
+  text-align: center;
+  font-size: 32rpx;
+  color: #fff;
+}
+
+.inpuText{
+  display: block;
+  font-size: 32rpx;
+  color: #fff;
+}
+.goTest{
+  margin-top: 50rpx;
+}
+
+.Btn{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100rpx;
+  border-top: 1rpx solid #dbdbdb;
+}
+
+.goHome,
+.goTest{
+  flex: 1 0 auto;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 40rpx;
+  background: #fff;
+  color: #000;
+  border-radius: 20rpx;
+}
+
+.goTest{
+  margin-bottom: 50rpx;
+  background: #1afa29;
+  color: #fff;
+}
+
+
+

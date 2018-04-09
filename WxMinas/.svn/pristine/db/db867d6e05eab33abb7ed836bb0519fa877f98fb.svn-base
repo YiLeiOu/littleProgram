@@ -1,0 +1,8 @@
+<template name="full-loading">
+	<view class="full-loading-dialog" wx:if="{{fullLoading}}">
+		<view class="loading-wrapper">
+			<image class="icon-loading" src="/images/loading-ripple.svg" mode="aspectFill"></image>
+			<text class="text-loading">加载中</text>
+		</view>
+	</view>
+</template>

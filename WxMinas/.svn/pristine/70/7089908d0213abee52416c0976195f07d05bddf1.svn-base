@@ -1,0 +1,95 @@
+<!--index.wxml-->
+
+<view class="contain">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="bannerTap">
+      <block wx:for="{{imgUrls}}" wx:key="index">
+        <swiper-item>
+          <navigator url="{{item.url}}">
+            <image src="{{item.imgUrl}}" mode="widthFix" class="slide-image"/>
+          </navigator>
+        </swiper-item>
+      </block>
+  </swiper>
+  <view class="mainCont">
+
+    <text class="funnyFun">有趣功能</text>
+
+    <view class="toolList">
+
+        <navigator class="littleTool" url="/pages/marry/marry" style="background-color:{{toolColor[1][0]}}">
+          <view class="toolHead">
+            <text class="toolTitle" style="color: {{toolColor[1][1]}}">{{toolTitle[1]}}</text>
+            <image src="{{toolIconUrl[1]}}" class="toolImg"></image>
+          </view>
+          <view class="introduce" style="color: {{toolColor[1][2]}}"><text>{{zhuangBi}}</text></view>
+        </navigator>
+        
+        <navigator class="littleTool" url="/pages/luck-product/luck-product" style="background-color:{{toolColor[2][0]}}">
+          <view class="toolHead">
+            <text class="toolTitle" style="color: {{toolColor[2][1]}}">{{toolTitle[2]}}</text>
+            <image src="{{toolIconUrl[2]}}" class="toolImg"></image>
+          </view>
+          <view class="introduce" style="color: {{toolColor[2][2]}}"><text>{{mekaHeadPic}}</text></view>
+        </navigator>
+
+        <navigator class="littleTool" url="/pages/testYouself/testYouself" style="background-color:{{toolColor[3][0]}}">
+          <view class="toolHead">
+            <text class="toolTitle" style="color: {{toolColor[3][1]}}">{{toolTitle[3]}}</text>
+            <image src="{{toolIconUrl[3]}}" class="toolImg"></image>
+          </view>
+          <view class="introduce" style="color: {{toolColor[3][2]}}"><text>{{loyalIndex}}</text></view>
+        </navigator>
+
+        <navigator class="littleTool" url="/pages/be-love/be-love" style="background-color:{{toolColor[4][0]}}">
+          <view class="toolHead">
+            <text class="toolTitle" style="color: {{toolColor[4][1]}}">{{toolTitle[4]}}</text>
+            <image src="{{toolIconUrl[4]}}" class="toolImg"></image>
+          </view>
+          <view class="introduce" style="color: {{toolColor[4][2]}}"><text>{{beLove}}</text></view>
+        </navigator>
+
+        <navigator class="littleTool" url="/pages/answer-book/answer-book" style="background-color:{{toolColor[5][0]}}">
+          <view class="toolHead">
+            <text class="toolTitle" style="color: {{toolColor[5][1]}}">{{toolTitle[5]}}</text>
+            <image src="{{toolIconUrl[5]}}" class="toolImg"></image>
+          </view>
+          <view class="introduce" style="color: {{toolColor[5][2]}}"><text>{{answerBook}}</text></view>
+        </navigator>
+
+        <navigator class="littleTool" url="/pages/mind-test/mind-test" style="background-color:{{toolColor[6][0]}}">
+          <view class="toolHead">
+            <text class="toolTitle" style="color: {{toolColor[6][1]}}">{{toolTitle[6]}}</text>
+            <image src="{{toolIconUrl[6]}}" class="toolImg"></image>
+          </view>
+          <view class="introduce" style="color: {{toolColor[6][2]}}"><text>{{mindTest}}</text></view>
+        </navigator>
+
+        <navigator class="littleTool" url="/pages/love/love" style="background-color:{{toolColor[7][0]}}">
+          <view class="toolHead">
+            <text class="toolTitle" style="color: {{toolColor[7][1]}}">{{toolTitle[7]}}</text>
+            <image src="{{toolIconUrl[7]}}" class="toolImg"></image>
+          </view>
+          <view class="introduce" style="color: {{toolColor[7][2]}}"><text>{{love}}</text></view>
+        </navigator>
+
+        <navigator class="littleTool" url="/pages/mood/mood" style="background-color:{{toolColor[8][0]}}">
+          <view class="toolHead">
+            <text class="toolTitle" style="color: {{toolColor[8][1]}}">{{toolTitle[8]}}</text>
+            <image src="{{toolIconUrl[8]}}" class="toolImg"></image>
+          </view>
+          <view class="introduce" style="color: {{toolColor[8][2]}}"><text>{{mood}}</text></view>
+        </navigator>
+
+        <view class="littleTool" style="background-color:{{toolColor[0][0]}}">
+          <view class="toolHead">
+            <text class="toolTitle" style="color: {{toolColor[0][1]}}">{{toolTitle[0]}}</text>
+            <image src="{{toolIconUrl[0]}}" class="toolImg"></image>
+          </view>
+          <view class="introduce" style="color: {{toolColor[0][2]}}"><text>{{moreFunn}}</text></view>
+        </view>
+
+        
+    </view>
+
+  </view>
+</view>

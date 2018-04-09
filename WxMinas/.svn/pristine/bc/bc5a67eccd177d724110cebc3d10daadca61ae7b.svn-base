@@ -1,0 +1,63 @@
+<view class="wrap">
+  <!-- 信息采集 -->
+  <view class="" hidden="{{hideOrShow}}">
+    <view class="marrtId">
+      <image src="/images/marriage-title.jpg" class="marriageImg" bindtap="" mode="widthFix"></image>
+    </view>
+    <view class="padd">
+      <text class="inputInfo">输入信息</text>
+    </view>
+    <view class="info padd">
+      <view class="maleName detailInfo">
+        <text class="infoText">男方姓名</text>
+        <input  class="inpu" bindinput="maleName" type="text" placeholder="男方姓名" value="{{maleName}}"></input>
+      </view>
+      <view class="malePlace detailInfo">
+        <text class="infoText">国籍</text>
+        <input class="inpu" bindinput="malePlace" type="text" placeholder="中国" value="{{malePlace}}"></input>
+      </view>
+      <view class="femaleName detailInfo">
+        <text class="infoText">女方姓名</text>
+        <input class="inpu" bindinput="femaleName" type="text" placeholder="女方姓名" value="{{femaleName}}"></input>
+      </view>
+      <view class="femalePlace detailInfo">
+        <text class="infoText">国籍</text>
+        <input class="inpu" bindinput="femalePlace" type="text" placeholder="中国" value="{{femalePlace}}"></input>
+      </view>
+    </view>
+    <view class="submi">
+      <view class="goHomePage" bindtap="goHomePage">回去首页</view>
+      <view class="subBtn" bindtap="makeCard">确认生成</view>
+    </view>
+  </view>
+
+  <!-- 生成图片弹出层  -->
+  <view class="alertImg" hidden="{{!hideOrShow}}">
+   
+    <view class="box">
+      <image src="/images/icon/close.png" class="close" bindtap="close"></image>
+    </view>
+
+    <view class="box myCanva">
+      <view >
+        <loading wx:if="{{isLoading}}">加载中</loading>
+      </view>
+      <image src="{{inviteCardUrl}}" mode="widthFix" class="marrigedImg" bindtap="previewImage" data-image-url="{{inviteCardUrl}}"></image>
+    </view>
+
+    <view class="btnWrap">
+      <button open-type="share" type="primary" class="shareBtn">
+        邀朋友玩
+      </button>
+      <button class="saveBtn" bindtap="savePic">
+        保存图片
+      </button>
+    </view>
+
+  </view>
+
+</view>
+
+<!-- 生成画布  -->
+<canvas canvas-id="marriged" class="marriged"></canvas>
+

@@ -1,0 +1,36 @@
+<view class="wrap">
+  <view class="exemplImg">
+    <image src="{{defaultImg}}" mode="widthFix" class="testImg" bindtap="previewImage"></image>
+  </view>
+  
+  <view class="Btn">
+    <view class="goHome" bindtap="goHomePage">回首页</view>
+    <view class="goTest" bindtap="goTest">测一测</view>
+  </view>
+
+  <view class="alertImg" hidden="{{!hideOrShow}}">
+   
+    <view class="box">
+      <image src="/images/icon/close.png" class="close" bindtap="close"></image>
+    </view>
+
+    <view class="box myCanva">
+      <view >
+        <loading wx:if="{{isLoading}}">加载中</loading>
+      </view>
+      <image src="{{inviteCardUrl}}" mode="widthFix" class="marrigedImg" bindtap="previewImage" data-image-url="{{inviteCardUrl}}"></image>
+    </view>
+
+    <view class="btnWrap">
+      <button open-type="share" type="primary" class="shareBtn">
+        邀朋友玩
+      </button>
+      <button class="saveBtn" bindtap="savePic">
+        保存图片
+      </button>
+    </view>
+
+  </view>
+</view>
+<!-- 生成画布  -->
+<canvas canvas-id="marriged" class="marriged"></canvas>

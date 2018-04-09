@@ -1,0 +1,36 @@
+<view class="wrap" >
+    <view class="testWrap" hidden="{{showOrHide}}">
+      <image mode="widthFix" class="bgImg" src="{{bgImg}}"></image>
+      
+        <view class="test">
+            <view class="quetion">
+                <text>{{quetion[num]}}</text>
+            </view>
+            <view class="option">
+                <radio-group bindchange="radioChange">
+                    <!-- 使用label才能实现点击内容触发radio选中 -->
+                    <label class="radio">
+                        <radio value="A" checked="{{clear}}"/>{{selection[num][0]}}
+                    </label>
+                    <label class="radio">
+                        <radio value="B" checked="{{clear}}"/>{{selection[num][1]}}
+                    </label>
+                </radio-group>
+            </view>
+        </view>
+      
+    </view>
+    <view class="alertCanvas" hidden="{{!showOrHide}}">
+        <view >
+            <loading wx:if="{{isLoading}}">加载中</loading>
+        </view>
+        <view class="preImg">
+            <image mode="widthFix" src="{{inviteCardUrl}}" bindtap="previewImage" data-image-url="{{inviteCardUrl}}"></image>
+        </view>
+        <view class="btn">
+            <button open-type="share" class="share" catchtap="onShareAppMessage">邀请好友</button>
+            <button class="saveImg" bindtap="saveImg">保存图片</button>
+        </view>
+    </view>
+</view>
+<canvas class="myCanvas" canvas-id="myCanvas" style="width:{{bg_width}}px;height:{{bg_height}}px;"></canvas>

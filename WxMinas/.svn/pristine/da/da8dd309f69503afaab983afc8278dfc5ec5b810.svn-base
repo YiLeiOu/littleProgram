@@ -1,0 +1,21 @@
+{
+  "pages": [
+    
+    "pages/index/index",
+    "pages/be-love/be-love",
+    "pages/marry/marry",
+    "pages/luck-product/luck-product",
+    "pages/luck-content/luck-content",
+    "pages/luck/luck",
+    "pages/logs/logs",
+    "pages/testYouself/testYouself",
+    "pages/answer-book/answer-book"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "搞嘢吧",
+    "navigationBarTextStyle": "black"
+  }
+}

@@ -1,0 +1,156 @@
+/* pages/testYouself/testYouself.wxss */
+page{
+  background: rgba(230, 230, 230, 0.4)
+}
+
+.wrap{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+
+.bgImgList{
+  padding-top: 40rpx;
+  width: 100%;
+  height: 600rpx;
+  text-align: center;
+}
+
+.currentImg{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.select-img{
+    padding-top: 20rpx;
+    width: 100%;
+    text-align: center;
+    font-size: 28rpx;
+    color: #999;
+}
+
+.upload-img{
+    margin-top: 30rpx;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    width: 86%;
+    height: 150rpx;
+    line-height: 150rpx;
+    border-top: 2rpx solid #dbdbdb;
+    border-bottom: 2rpx solid #dbdbdb;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAYlJREFUaAXtl81Kw0AQx2cSc+hNL+IjFIQgFELRU30MQcEH8etJBMHHEPEQ0WCJPRQ8elNEj2KLsmtGwR7s15aZ6aGzh5CP3eH/+4XdTQCsmQEzYAbMgBkwA2ZgcQ0gB3pZlsvvfXeF6N8SrO1k2fozR91pakTTdJrUp993dQCfeg+tT/dxWRTdtUljuJ6zADSbjRtAOKNQHqCuCcECQMG3ssb+PCBY5gABUPPeR3nRPq1ewx5dV8UfkqjWkpwTrADzgGAH0IYQAdCEEAPQghAF0IAQB5CGYNsHKOiohoju3z7he+ej+ofcVwGgQAQRYfQ4COdXBuezny3NPjRsZH7bPnbOHdIoBHxJMN4NqzC8t8ocoPDVLn30Fz6Kt7Nsozs8UthdcQDJ8L9CwoCDekuHFwXQCC8GoBVeBEAzPDuAdngCiOnA0a6Lu4Pqn/iEav2s84xL5bh8LMto3umsQu/rif7INMMTGMunxGaavlbhLxDhPlEyP+6t2DMzYAbMgBkwA2bADCyKgW8mrNsKLRXXcQAAAABJRU5ErkJggg==") 94% center no-repeat;
+    background-size: 80rpx;
+}
+
+.upload-img .avatar{
+    vertical-align: middle;
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.explainText{
+  display: block;
+  flex: 0 0 24%;
+  font-size: 32rpx;
+  color: #000;
+}
+
+.inpuText{
+  padding-left: 18rpx;
+  flex: 1 0 auto;
+  font-size: 32rpx;
+}
+
+.Btn{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100rpx;
+  border-top: 1rpx solid #dbdbdb;
+}
+
+.goHome,
+.goTest{
+  flex: 1 0 auto;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 40rpx;
+  background: #fff;
+  color: #000;
+}
+
+.goTest{
+  background: #d4c305;
+  color: #fff;
+}
+
+/* 画布生成图片弹出层  */
+.alertImg{
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  position: fixed; 
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; 
+  z-index: 100;
+  margin: auto;
+  background: #edf0f3;
+}
+
+/* 取消按钮  */
+.box{
+  padding-top: 10rpx;
+  width: 100%;
+}
+
+.close{
+  position: relative;
+  top: 0;
+  left: 86%;
+  padding: 10rpx;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  background: #fff;
+
+}
+
+/* 画布生成的图片样式  */
+.myCanva{
+  margin: 10rpx 10%;
+  width: 80%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.marrigedImg{
+  width: 100%;
+  height: auto;
+}
+
+/* 画布  */
+.marriged{
+  position: fixed;
+  top: -4000px;
+}
+
+/* 底部按钮  */
+.btnWrap{
+  margin: 0 auto;
+  margin-top: 140rpx;
+  width: 80%;
+  height: 200rpx;
+}
+
+.shareBtn{
+  margin-bottom: 50rpx;
+}

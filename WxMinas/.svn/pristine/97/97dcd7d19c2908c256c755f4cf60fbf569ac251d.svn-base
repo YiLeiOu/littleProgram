@@ -1,0 +1,41 @@
+<!--index.wxml-->
+
+<view class="contain">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="bannerTap">
+      <block wx:for="{{imgUrls}}" wx:key="index">
+        <swiper-item>
+          <navigator url="{{item.url}}">
+            <image src="{{item.imgUrl}}" mode="widthFix" class="slide-image"/>
+          </navigator>
+        </swiper-item>
+      </block>
+  </swiper>
+  <view class="mainCont">
+
+    <text class="funnyFun">有趣功能</text>
+
+    <view class="toolList">
+
+        <block wx:for="{{toolList}}" wx:key="index">
+            <navigator class="littleTool" url="{{item.pageUrl}}" style="background-color:{{item.toolBgColor}}">
+            <view class="toolHead">
+                <text class="toolTitle" style="color: {{item.titleColor}}">{{item.toolTitle}}</text>
+                <image src="{{item.toolIconUrl}}" class="toolImg"></image>
+            </view>
+            <view class="introduce" style="color: {{item.introColor}}"><text>{{item.introduce}}</text></view>
+            </navigator>
+        </block>
+
+        <view class="littleTool" style="background-color:#84e67c;">
+          <view class="toolHead">
+            <text class="toolTitle" style="color: #144410;">更多好玩开发ing</text>
+            <image src="/images/icon/smile.png" class="toolImg"></image>
+          </view>
+          <view class="introduce" style="color: #ebf239"><text>来日方长，好玩不断~</text></view>
+        </view>
+
+        
+    </view>
+
+  </view>
+</view>

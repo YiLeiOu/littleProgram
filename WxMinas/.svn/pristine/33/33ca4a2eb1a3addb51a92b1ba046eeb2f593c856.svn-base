@@ -1,0 +1,16 @@
+{
+  "pages": [
+    "pages/marry/marry",
+    "pages/luck-content/luck-content",
+    "pages/luck-product/luck-product",
+    "pages/luck/luck",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  }
+}

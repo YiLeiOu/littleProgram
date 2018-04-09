@@ -1,0 +1,128 @@
+//index.js
+//获取应用实例
+const app = getApp()
+
+Page({
+  data: {
+    // 小工具相关数据
+    toolTitle: [
+      '更多好玩开发ing',
+      '结了个婚',
+      '狗年运势',
+      '出轨指数',
+      '想约就约嘛',
+      '迷之答案',
+      '人性弱点',
+      '被爱源由'
+    ],
+    toolIconUrl: [
+      '/images/icon/smile.png',
+      '/images/icon/love.png',
+      '/images/icon/dog.png',
+      '/images/icon/test.png',
+      '/images/icon/yue.png',
+      '/images/icon/answer-book.png',
+      '/images/icon/mind-map.png',
+      '/images/icon/reasonloved.png'
+    ],
+    toolColor: [
+      // 顺序： 背景色-------标题色------介绍文字色
+      
+      ['#e0ddff', '#2cb2ff', '#05e0df'],// 更多好玩
+
+      ['#f2fcf1', '#6f9838', '#85c861'],
+      ['#faeff3', '#e74f80', '#f4b3c9'],
+      ['#e9fdfb', '#2cb28f', '#a5e0dc'],
+      ['#e0fdff', '#20b2ff', '#afe00c'],
+      ['#fae003', '#e74080', '#34b0c3'],
+      ['#f2fcf1', '#6f9838', '#85c861'],
+      ['#FFEFDB', '#FF1493', '#F08080']
+    ],
+    // 工具介绍文本
+    moreFunn: '来日方长，好玩不断',
+    zhuangBi: '一不小心我们领证啦啦啦啦',
+    mekaHeadPic: '桃花运？财运？测一测就知道啦',
+    loyalIndex: '关于出轨这件事，你有多坚定？？？',
+    beLove: '呀！原来那么多人想约我噢',
+    answerBook: '嘿，你要的答案在这呢？！',
+    mindTest: '你是人性中善良的天使呢？',
+    love: '你知道我为什么爱你吗？',
+    
+
+
+    motto: 'Hello World',
+    userInfo: {},
+    hasUserInfo: false,
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+
+    imgUrls: [
+      {
+        url: '/pages/marry/marry',
+        imgUrl: '/images/marriage-bg.jpg'
+      },
+      {
+        url: '/pages/luck-product/luck-product',
+        imgUrl: '/images/luck/bg_sort20180308105823.jpg'
+      }
+      
+    ],
+    
+    introduceText: 'sdffdsfsdfsdsdfssdfs',
+
+    indicatorDots: true,
+    autoplay: true,
+    interval: 3000,
+    duration: 1000
+
+  },
+  
+  onLoad: function () {
+    if (app.globalData.userInfo) {
+      this.setData({
+        userInfo: app.globalData.userInfo,
+        hasUserInfo: true
+      })
+    } else if (this.data.canIUse){
+      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+      // 所以此处加入 callback 以防止这种情况
+      app.userInfoReadyCallback = res => {
+        this.setData({
+          userInfo: res.userInfo,
+          hasUserInfo: true
+        })
+      }
+    } else {
+      // 在没有 open-type=getUserInfo 版本的兼容处理
+      wx.getUserInfo({
+        success: res => {
+          app.globalData.userInfo = res.userInfo
+          this.setData({
+            userInfo: res.userInfo,
+            hasUserInfo: true
+          })
+        }
+      })
+    }
+  },
+  getUserInfo: function(e) {
+    console.log(e)
+    app.globalData.userInfo = e.detail.userInfo
+    this.setData({
+      userInfo: e.detail.userInfo,
+      hasUserInfo: true
+    })
+  },
+
+  onShareAppMessage: function (res) {
+    return {
+      title: '我发现这个小程序太搞了，你也来看看！',
+      path: '/pages/index/index',
+      success: function (res) {
+        // 转发成功
+      },
+      fail: function (res) {
+        // 转发失败
+      }
+    }
+  }
+})

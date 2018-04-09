@@ -1,0 +1,63 @@
+
+const util = require('../../utils/util.js')
+
+Page({
+    data: {
+        sendName: ''
+    },
+
+    onLoad: function (options) {
+        var that = this;
+        wx.getUserInfo({
+            success: function (res) {
+                // console.log(res);
+                var avatarUrl = 'userInfo.avatarUrl';
+                var nickName = 'userInfo.nickName';
+                that.setData({
+                    [avatarUrl]: res.userInfo.avatarUrl,
+                    [nickName]: res.userInfo.nickName
+                });
+            }
+        });
+    },
+
+    onReady: function (options) {
+        var that = this;
+        var userInfo = {};
+        var avatarUrl = {};
+
+        wx.login({
+            success: function () {
+                wx.getUserInfo({
+                    success: function (res) {
+                        userInfo = res.userInfo;
+                        that.setData({
+                        })
+                    }
+                });
+            }
+        })
+    },
+    goHome: function(e) {
+        wx.navigateTo({
+            url: '/pages/index/index'
+        })
+    },
+    imgResource: function (e) {
+        console.log("用户点击更换头像");
+        // console.log(e);
+    },
+    changeName: function (e) {
+        console.log(e);
+        console.log(e.detail.value);
+    },
+    formPicture: function (e) {
+            wx.navigateTo({
+                url: '/pages/love-res/love-res'
+            });
+    }
+})
+
+
+
+

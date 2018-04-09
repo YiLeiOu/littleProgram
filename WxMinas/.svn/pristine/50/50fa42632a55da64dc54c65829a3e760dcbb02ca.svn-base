@@ -1,0 +1,41 @@
+<!--pages/mood/mood.wxml-->
+<view class="app">
+
+    <view class="moodcard">
+        <image src="/images/moodcard.png" mode="widthFix"></image>
+    </view>
+
+
+    <form bindsubmit='formSubmit'>
+        <view class="headMessage">
+            <view class="headText">个人头像：</view>
+            <view class="headImage">
+                <image src="{{avatarUrl}}" bindtap="avatarClicked"></image>
+            </view>
+        </view>
+
+        <view class="writeContent">
+            <view class="contentText">文字内容：</view>
+            <input class="contentInput" placeholder="如(中文) 漠视一切，与自己感觉无关的现象。"  name="writeContent"></input>
+        </view>
+
+        <view class="signature">
+            <view class="nameText">签名：</view>
+            <input class="nameInput" placeholder='请输入您的名字' value="{{nickName?nickName: nickName}}" name="signature" bindblur='nameChange'></input>
+        </view>
+
+        <view class="date">
+            <view class="dateText">日期：</view>
+            <view class="dateShow">{{time}}</view>
+        </view>
+
+        <view class="choice">
+            <button class="goHome" bindtap="goHome">去首页看看</button>
+            <button class="goDraw" form-type="submit">生成图片</button>
+        </view>
+
+    </form>
+
+
+</view>
+

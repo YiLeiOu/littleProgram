@@ -1,0 +1,154 @@
+/* pages/marry/marry.wxss */
+/* 包裹层  */
+.wrap{
+  width: 100%;
+  height: 100%;
+  background: #f8f8f8;
+  overflow: hidden;
+}
+
+/* padding样式添加类  */
+.padd{
+  padding: 0 30rpx;
+}
+
+/* 结婚证  */
+.marrtId{
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.marriageImg{
+  margin: 0 auto;
+  width: 80%;
+  box-sizing: border-box;
+}
+
+/* 结婚证用户信息输入框  */
+.info{
+  margin-top: 10rpx;
+  border-top: 1rpx solid #e5e5e5;
+  border-bottom: 1rpx solid #e5e5e5;
+  background: #fff;
+}
+
+.inputInfo{
+  margin-top: .77em;
+  margin-bottom: .3em;
+  font-size: 28rpx;
+  color: #999;
+}
+
+.detailInfo{
+  display: flex;
+  height: 50rpx;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+
+.femalePlace{
+  border: none;
+}
+
+.infoText{
+  flex: 1;
+}
+
+.inpu{
+  flex: 2;
+}
+
+/* 底部按钮  */
+.submi{
+  display: flex;
+  justify-content: center;
+  align-items: cneter;
+  margin-top: 30rpx;
+  width: 100%;
+  height: 100rpx;
+}
+
+.goHomePage,
+.subBtn{
+  flex: 1;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: #fff;
+  background: #fdad2f;
+}
+
+.goHomePage{
+  color: #333;
+  background: #fff;
+}
+
+/* 画布生成图片弹出层  */
+.alertImg{
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  position: fixed; 
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; 
+  z-index: 100;
+  margin: auto;
+  background: #edf0f3;
+}
+
+/* 取消按钮  */
+.box{
+  padding-top: 10rpx;
+  width: 100%;
+}
+
+.close{
+  position: relative;
+  top: 0;
+  left: 86%;
+  padding: 10rpx;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  background: #fff;
+
+}
+
+/* 画布生成的图片样式  */
+.myCanva{
+  margin-bottom: 10rpx;
+  width: 100%;
+   height: 810rpx; 
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.marrigedImg{
+  width: 90%;
+}
+
+/* 画布  */
+.marriged{
+  width: 732px;
+  height: 900px;
+  position: fixed;
+  top: -4000px;
+}
+
+/* 底部按钮  */
+.btnWrap{
+  margin: 0 auto;
+  margin-top: 40rpx;
+  width: 90%;
+  height: 200rpx;
+}
+
+.shareBtn{
+  margin-bottom: 20rpx;
+}

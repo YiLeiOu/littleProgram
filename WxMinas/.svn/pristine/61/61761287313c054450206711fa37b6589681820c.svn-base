@@ -1,0 +1,55 @@
+<!--punch/pages/luck/luck.wxml-->
+
+<loading hidden="{{avatarUrl}}">正在加载</loading>
+
+<view class="container" wx:if="{{avatarUrl}}">
+
+  <!--rectangle-1-->
+  <view class='rectangle-1'>
+    <image src="{{bg}}" mode="widthFix" class="invite-card"></image>
+  </view>
+
+  <!--form-->
+  <form bindsubmit="formSubmit" style='width:94%;margin:0 auto;'>
+    <!--rectangle-2-->
+
+    <view class='rectangle-2'>
+
+      <!--
+    <view class='box'>
+      <view class='item-1'>性别：</view>
+      <view class='item-2'>{{sex}}</view>
+      <view class='item-3'>></view>
+    </view>
+    -->
+
+      <view class='box' style='height:70rpx;'>
+        <view class='item-1' style='margin-top:15rpx;'>头像：</view>
+        <view class='item-2' style='margin-top:10rpx;'>
+          <view class='icon'>
+            <image src="{{avatarUrl}}" style='width: 50rpx;height:50rpx;margin-left:10rpx;margin-bottom:-4px;'></image>
+          </view>
+        </view>
+        <view class='item-3 '></view>
+      </view>
+
+      <view class='box ' style='height:70rpx;'>
+        <view class='item-1 ' style='margin-top:10rpx;'>昵称：</view>
+        <view class='item-2 ' style='margin-bottom:-6rpx;margin-top:4rpx;'>
+          <input placeholder="请输入您的昵称" style='margin-left:250rpx;margin-bottom:-4rpx;width:100%;' bindblur='changeName' value='{{userInfo.nickName?userInfo.nickName:userInfo.nickName}}' name='username' />
+        </view>
+        <view class='item-3 '></view>
+      </view>
+
+    </view>
+
+    <!--rectangle-3-->
+    <view class='rectangle-3 '>
+      <view class='btnGroup '>
+        <button formType="submit" type="primary" style='flex:1 '>生成图片</button>
+      </view>
+    </view>
+
+  </form>
+
+</view>

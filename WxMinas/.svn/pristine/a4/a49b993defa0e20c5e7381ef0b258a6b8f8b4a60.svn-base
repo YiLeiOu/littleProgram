@@ -1,0 +1,127 @@
+/**app.wxss**/
+page {
+  background-color: #EDF0F3;
+}
+.navigator-hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  opacity: 0.8;
+}
+.text-primary {
+    color: #108ee9;
+}
+.empty-zone .empty-img {
+  display: block;
+  margin: 0 auto 15px;
+  width: 402rpx;
+  height: 220rpx;
+}
+.empty-zone .empty-text {
+  margin: 0 50px;
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #999999;
+}
+.loading {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+.loading .icon-loading {
+    display: block;
+    margin: 0 10px;
+  width: 25px;
+  height: 25px;
+}
+.loading .text-loading {
+  font-size: 12px;
+  color: #999;
+  line-height: 25px;
+}
+.loading .not-more-text {
+  font-size: 12px;
+  color: #999;
+  line-height: 25px;
+}
+
+/* reset button */
+.reset-btn {
+  background-color: transparent;
+}
+
+.reset-btn::after {
+  display: none;
+}
+
+.fixed-btn {
+  position: fixed;
+  right: 20rpx;
+  bottom: 160rpx;
+  z-index: 110;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 132rpx;
+  height: 132rpx;
+  border-radius: 50%;
+}
+.fixed-manage-btn {
+  position: fixed;
+  right: 20rpx;
+  bottom: 320rpx;
+  z-index: 110;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 132rpx;
+  height: 132rpx;
+  border-radius: 50%;
+}
+.fixed-btn .icon-home,
+.fixed-manage-btn .icon-manage {
+  display: block;
+  width: 132rpx;
+  height: 132rpx;
+}
+.fixed-manage-btn.navigator-hover,
+.fixed-btn.navigator-hover {
+    background-color: transparent;
+    opacity: 1;
+}
+
+/* 全页面loading */
+.full-loading-dialog {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1100;
+  margin: auto;
+  display: block;
+  background-color: #f4f6f8;
+}
+.full-loading-dialog .loading-wrapper {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.full-loading-dialog .icon-loading {
+  width: 125rpx;
+  height: 125rpx;
+}
+.full-loading-dialog .text-loading {
+  font-size: 30rpx;
+  color: #999;
+  line-height: 60rpx;
+}

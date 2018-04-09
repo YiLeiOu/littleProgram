@@ -1,0 +1,50 @@
+/**app.wxss**/
+page {
+  background-color: #fff;
+}
+.navigator-hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  opacity: 0.8;
+}
+/* reset button */
+.reset-btn {
+  background-color: transparent;
+}
+
+.reset-btn::after {
+  display: none;
+}
+
+/* 全页面loading */
+.full-loading-dialog {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1100;
+  margin: auto;
+  display: block;
+  background-color: #f4f6f8;
+}
+.full-loading-dialog .loading-wrapper {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.full-loading-dialog .icon-loading {
+  width: 125rpx;
+  height: 125rpx;
+}
+.full-loading-dialog .text-loading {
+  font-size: 30rpx;
+  color: #999;
+  line-height: 60rpx;
+}

@@ -1,0 +1,101 @@
+//index.js
+//获取应用实例
+const app = getApp()
+
+Page({
+  data: {
+    // 小工具相关数据
+    toolTitle: [
+      '结了个婚',
+      '狗年运势',
+      '更多好玩正在开发~'
+    ],
+    toolIconUrl: [
+      '/images/icon/love.png',
+      '/images/icon/dog.png',
+      '/images/icon/smile.png'
+    ],
+    toolColor: [
+      // 顺序： 背景色-------标题色------介绍文字色
+      ['#f2fcf1', '#6f9838', '#85c861'],
+      ['#faeff3', '#e74f80', '#f4b3c9'],
+      ['#e9fdfb', '#2cb28f', '#a5e0dc'],
+    ],
+    // 工具介绍文本
+    zhuangBi: '一不小心我们领证啦啦啦啦',
+    mekaHeadPic: '桃花运？财运？测一测就知道啦',
+    mindTest: '来日方长，好玩不断',
+
+
+    motto: 'Hello World',
+    userInfo: {},
+    hasUserInfo: false,
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+
+    imgUrls: [
+      '/images/marriage-bg.jpg',
+      '../../images/luck/bg_sort20180308105823.jpg'
+    ],
+    
+    introduceText: 'sdffdsfsdfsdsdfssdfs',
+
+    indicatorDots: true,
+    autoplay: true,
+    interval: 3000,
+    duration: 1000
+
+  },
+  //事件处理函数
+  bindViewTap: function() {
+    wx.navigateTo({
+      url: '../marry/marry'
+    })
+  },
+  zhuangBi: function () {
+    wx.navigateTo({
+      url: '../marry/marry'
+    })
+  },
+  lucky: function () {
+    wx.navigateTo({
+      url: '../luck/luck'
+    })
+  }, 
+
+  onLoad: function () {
+    if (app.globalData.userInfo) {
+      this.setData({
+        userInfo: app.globalData.userInfo,
+        hasUserInfo: true
+      })
+    } else if (this.data.canIUse){
+      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+      // 所以此处加入 callback 以防止这种情况
+      app.userInfoReadyCallback = res => {
+        this.setData({
+          userInfo: res.userInfo,
+          hasUserInfo: true
+        })
+      }
+    } else {
+      // 在没有 open-type=getUserInfo 版本的兼容处理
+      wx.getUserInfo({
+        success: res => {
+          app.globalData.userInfo = res.userInfo
+          this.setData({
+            userInfo: res.userInfo,
+            hasUserInfo: true
+          })
+        }
+      })
+    }
+  },
+  getUserInfo: function(e) {
+    console.log(e)
+    app.globalData.userInfo = e.detail.userInfo
+    this.setData({
+      userInfo: e.detail.userInfo,
+      hasUserInfo: true
+    })
+  }
+})

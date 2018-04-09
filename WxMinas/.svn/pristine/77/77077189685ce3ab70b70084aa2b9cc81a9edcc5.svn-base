@@ -1,0 +1,13 @@
+<view class="wrap">
+  <view class="exemplImg">
+    <image src="{{defaultImg}}" mode="widthFix" class="testImg" bindtap="previewImage"></image>
+  </view>
+  <view class="userInfo">
+    <view class="userInput">
+      <text class="explainText name">姓名</text>
+      <input class="inpuText" bindinput="setName" type="text" placeholder="{{userInfo.nickName}}" value="{{defaultName}}"></input>
+    </view>
+    <navigator url="../mind-test-page/mind-test-page?title={{defaultName}}" class="goTest">去测试</navigator>
+    <navigator url="../index/index" class="goHome">回首页</navigator>
+  </view>
+</view>

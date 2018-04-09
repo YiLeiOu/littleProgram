@@ -1,0 +1,38 @@
+/* punch/pages/luck1/luck1.wxss */
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+/*rectangle-4*/
+
+.rectangle-4{
+  background: #edf0f3;
+}
+
+.invite-card {
+  display: block;
+  width: 70%;
+  margin: 20rpx auto;
+  height: 0%;
+  background: #edf0f3;
+}
+
+.rectangle-4.btnGroup {
+  display: flex;
+  flex-direction: column;
+  background: #edf0f3;
+}
+
+.rectangle-4 .btnGroup button {
+  width: 80vw;
+  margin: 10rpx auto;
+}
+
+.myCanvas {
+  z-index: -1000;
+  opacity: 0;
+  position: absolute;
+  top: -5000px;
+}

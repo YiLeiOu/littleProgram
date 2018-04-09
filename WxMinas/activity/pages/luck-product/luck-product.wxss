@@ -1,0 +1,57 @@
+/* punch/pages/luck/luck.wxss */
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: #f8f8f8;
+}
+
+.rectangle-1 {
+}
+
+.invite-card {
+  display: block;
+  width: auto;
+  margin: 20rpx;
+}
+
+/*rectangle-2*/
+
+.rectangle-2 {
+  background: white;
+}
+
+.rectangle-2 .box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20rpx;
+  padding-left: 20rpx;
+  padding-right: 40rpx;
+  background: white;
+  font-size: 28rpx;
+  color: #708090;
+  border-top: 1px #dcdcdc solid;
+  border-bottom: 1px #dcdcdc solid;
+}
+
+.rectangle-2 .box .item-2 {
+  margin-left: -500rpx;
+}
+
+/*rectangle-3*/
+
+.rectangle-3 {
+  margin-top: 20rpx;
+}
+
+.rectangle-3 .btnGroup {
+  display: flex;
+  margin-bottom: 10rpx;
+}
+
+.rectangle-3 button::after {
+  border: none;
+}
+
+

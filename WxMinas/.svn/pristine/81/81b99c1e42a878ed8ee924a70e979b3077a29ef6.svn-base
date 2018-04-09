@@ -1,0 +1,136 @@
+/* pages/testYouself/testYouself.wxss */
+page{
+   
+  background: rgba(230, 232, 231, 0.5);
+}
+.wrap{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.exemplImg{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.testImg{
+  width: 75%;
+}
+
+
+.active{
+  /* position: fixed;
+  left: 12.5%;
+  bottom: 0; */
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 5%;
+  padding-right: 5%;
+  width: 90%;
+  overflow: hidden;
+   /* border: 1rpx solid #dbdbdb;  */
+  /* border-radius: 20rpx; */
+}
+
+.textarea{
+  width: 85%;
+}
+.textInput{
+  min-height: 44rpx;
+  line-height: 44rpx;
+  padding: 5%;
+  width: 90%;
+  border: 1rpx solid #dbdbdb;
+  border-radius: 20rpx;
+  background: rgba(222, 251, 239, 0.5)
+}
+
+.goHome,
+.goTest{
+  margin-top: 30rpx;
+  width: 85%;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 40rpx;
+  background: #fff;
+  color: #000;
+  border-radius: 20rpx;
+}
+
+.goTest{
+  background: #e1d519;
+  color: #fff;
+}
+
+/* 画布生成图片弹出层  */
+.alertImg{
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  position: fixed; 
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; 
+  z-index: 100;
+  margin: auto;
+  background: #edf0f3;
+}
+
+/* 取消按钮  */
+.box{
+  padding-top: 10rpx;
+  width: 100%;
+}
+
+.close{
+  position: relative;
+  top: 0;
+  left: 86%;
+  padding: 10rpx;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  background: #fff;
+
+}
+
+/* 画布生成的图片样式  */
+.myCanva{
+  margin-bottom: 50rpx;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.marrigedImg{
+  width: 80%;
+}
+
+/* 画布  */
+.marriged{
+  width: 1280px;
+  height: 1659px;
+  position: fixed;
+  top: -4000px;
+}
+
+/* 底部按钮  */
+.btnWrap{
+  margin: 0 auto;
+  margin-top: 20rpx;
+  width: 80%;
+  height: 200rpx;
+}
+
+.shareBtn{
+  margin-bottom: 20rpx;
+  background-color: #d2c93a;
+}

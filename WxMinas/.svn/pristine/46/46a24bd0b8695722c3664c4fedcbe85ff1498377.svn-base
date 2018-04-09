@@ -1,0 +1,23 @@
+<!--pages/luck/luck.wxml-->
+<view class="wrapper">
+    <input class="name-input" placeholder="名字" auto-focus/>
+    <button type="primary" bindtap="makeCard">生成器</button>
+
+
+    <view class="invite-dialog" hidden="{{ !showInviteCard }}" bindtap="closeAchiveCard">
+        <view class="dialog-main">
+            <view class="card-wrapper">
+                <button class="reset-btn close-btn" catchtap="closeAchiveCard"></button>
+                <image src="{{inviteCardUrl}}" mode="widthFix" class="invite-card" catchtap="previewImage" data-image-url="{{inviteCardUrl}}"></image>
+            </view>
+        </view>
+        
+        <view class="btn-wrapper">
+            <button class="reset-btn btn btn-save" catchtap="saveImage"><view class="icon-save"></view>保存图片</button>
+            <button class="reset-btn btn btn-fri" catchtap="" open-type="share" data-share-image="{{ inviteCardUrl }}"><view class="icon-fri"></view>发给好友</button>
+            <!--<button class="reset-btn btn btn-circle" open-type="contact" session-from="achieve_card_{{userInfo.user_id}}_{{subjectId}}"><view class="icon-circle"></view>分享朋友圈</button>-->
+        </view>
+    </view>
+</view>
+
+<canvas canvas-id="myCanvas" class="canvas-model" style="width: 750px; height: 2000px;" />

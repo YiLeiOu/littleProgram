@@ -1,0 +1,37 @@
+<!--pages/love/love.wxml-->
+
+<view class="body">
+<!--轮播区  -->
+    <view class="swiper">
+        <view class='luck'>
+            <image class="luckCard" src="../../images/love/reason1.jpg"></image>       
+        </view>
+    </view>
+
+<!--更改个人头像和姓名  -->
+    <view>
+    <!--头像  -->
+        <view class="changeHead" >
+            <view class="headTitle">更换头像：</view>
+            <view class="headImg" bindtap='imgResource'>
+                <view>
+                     <image src="{{userInfo.avatarUrl}}"></image> 
+                </view>
+                <view>></view>
+            </view>       
+        </view>
+    <!--姓名  -->
+        <view class="changeName">
+            <view class="nameTitle">姓名：</view>
+            <input class="rename" placeholder="请输入您的昵称" value="{{userInfo.nickName?userInfo.nickName:userInfo.nickName}}" bindblur="changeName"></input>
+        </view>    
+    </view>
+
+<!--去首页 或 生成图片  -->
+    <view class="choice">
+        <view class="home" bindtap='goHome'>去首页看看</view>
+        <view class="make" bindtap='formPicture'>生成图片</view>
+    </view>
+</view>
+
+

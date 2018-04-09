@@ -1,0 +1,79 @@
+/**index.wxss**/
+.contain {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  overflow: hidden;
+}
+
+.bannerTap {
+  width: 100%;
+  height: 400rpx;
+}
+
+.slide-image{
+  width: 100%;
+}
+
+.mainCont {
+  width: 100%;
+}
+
+.funnyFun {
+  line-height: 80rpx;
+  padding: 0 20rpx;
+  font-size: #111111;
+}
+
+.toolList {
+  padding: 0 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.littleTool {
+  /* public */
+  padding: 20rpx 10rpx;
+  margin: 10rpx;
+  flex: 0 0 42%;
+  height: 200rpx;
+  border-radius: 10rpx;
+
+  /*private  */
+}
+
+.toolHead {
+  display: flex;
+  align-items: center;
+  width: 310rpx;
+}
+
+.toolTitle {
+  /* public */
+  display: flex;
+  align-items: center;
+  padding: 0 15rpx;
+  width: 60%;
+  line-height: 50rpx;
+  text-align: left;
+  font-size: 40rpx;
+
+  /*private  */
+}
+
+.toolImg {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.introduce {
+  /* public */
+  display: flex;
+  flex-wrap: wrap;
+  width: 88%;
+  padding: 16rpx;
+  line-height: 44rpx;
+  word-break:break-all;
+  font-size: 32rpx;
+}

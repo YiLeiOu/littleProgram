@@ -1,0 +1,360 @@
+// pages/marry/marry.js
+import util from '../../utils/util'
+
+var defaultOptions = {
+
+  // 头像尺寸及位置
+  head_width: 75,
+  head_height: 75,
+  head_pos: [602, 1192],
+  portraitPath: '',
+
+  // 用户名尺寸及位置
+  nickname_pos: [640, 1350],
+  nickname_color: '#000000',
+  nickname_size: 30,
+  nickname_align: 'left',
+
+  // 二维码尺寸及位置
+  code_pos: [1130, 1500],
+  code_width: 150,
+  code_height: 150,
+  codePath: '/images/gao_qr_code_1.jpg',
+
+  // 图片尺寸及位置
+  bg_url: '/images/answer-bg.jpg',
+  bg_width: 1280,
+  bg_height: 1659,
+
+}
+
+
+Page({
+  /**
+   * 页面的初始数据
+   */
+
+  data: {
+    defaultImg: '/images/answer-pre.jpg',
+
+    showInviteCard: false,
+    inviteCardUrl: '',
+    userInfo: {},
+
+    textValue: '',
+
+    windowHeight: '',
+    hideOrShow: false,
+    saveImg: true,
+    isLoading: null,
+
+    followText: [
+        "我也要玩",
+        "搜索“搞嘢吧”"
+    ],
+
+    answerList:[
+      '千万别在这上面押宝',
+      '采取一个大胆的态度',
+      '听取专家的意见',
+      '你会发现你自己无法妥协',
+      '专注在你的家庭生活上吧',
+      '研究，然后享受它',
+      '当然',
+      '它将无法预测',
+      '绝对不',
+      '带着好玩的好奇心去探索它',
+      '最好等等看',
+      '它好像是确定的',
+      '趁早做',
+      '对别人保密',
+      '可能会发生一些令人吃惊的事作为结局',
+      '答案可能会是以另一种语言形式来到你身边',
+      '你将需要适当调整一下',
+      '怀疑它',
+      '它将带来好运',
+      '要有点耐心'
+    ]
+  },
+
+
+  // 关闭按钮
+  close: function () {
+    this.setData({
+      hideOrShow: false,
+      textValue: '',
+    })
+  },
+  // 头像
+  loadPortraitPath: function (imgUrl) {
+    wx.getImageInfo({
+      src: imgUrl.replace('http://', 'https://'),
+      success: function (res) {
+        defaultOptions.portraitPath = res.path;
+      }
+    })
+  },
+
+  textValue: function (e) {
+    this.setData({
+      textValue: e.detail.value
+    })
+  },
+
+  //生成图片
+  goTest: function (e) {
+    var _this = this;
+    const that = this.data
+
+    if (that.textValue === '' || that.textValue === ' ' || that.textValue === null || that.textValue === undefined) {
+      wx.showToast({
+        title: '提个问题吧！',
+        icon: 'none',
+        duration: 2000
+      })
+    } else {
+      // 弹出层开关
+      this.setData({
+        hideOrShow: true,
+        isLoading: true
+      })
+    }
+
+
+    var _check = function () {
+      let localPath = defaultOptions.portraitPath;
+
+      if (!!localPath) {
+        // callback(localPath);
+        _this._doMakeAchieveCard(defaultOptions, function (path) {
+          _this.setData({
+            inviteCardUrl: path,
+          })
+        })
+      } else {
+        setTimeout(_check, 50);
+      }
+
+    }
+    _check();
+    // }
+  },
+
+  //预览图片
+  previewImage: function (event) {
+    wx.previewImage({
+      urls: [event.currentTarget.dataset.imageUrl]
+    })
+  },
+
+  _doMakeAchieveCard: function (options, callback) {
+    console.log(options)
+    const _this = this
+    const that = this.data
+    try {
+      //背景图
+      let cardOptions = options;
+      let ctx = wx.createCanvasContext('marriged');
+      ctx.drawImage(cardOptions.bg_url, 0, 0, cardOptions.bg_width, cardOptions.bg_height);
+
+      // 定义换行函数，每5个字换一行
+      const getAnswer = (content = '')=>{
+        let result = []
+        if (typeof content === 'string') {
+            const contNum = 5
+            for (let offset = 0, len = content.length; offset < len;) {
+                let start  = offset
+                let end = offset + contNum
+                let block = content.substring(start, end)
+                result.push(block)
+                offset += contNum
+            }
+        }
+        return result
+      }
+
+
+      //文字信息
+      const textSize = that.windowWidth / 0.67 * 0.1
+      const answerNum = Math.floor(Math.random() * that.answerList.length)
+      ctx.setFontSize(textSize)
+      ctx.setFillStyle('#fff')
+      ctx.setTextAlign('center')
+
+      // 定义文本的初始位置
+      const answerCont_X = 640
+      const answerCont_Y = 500
+      // 定义行高
+      const cont_line_height = 80
+
+      let answerContent = getAnswer(that.answerList[answerNum])
+      for (let i = 0, len = answerContent.length; i < len; i++) {
+        let x = answerCont_X
+        let y = answerCont_Y + cont_line_height * i
+        ctx.fillText(answerContent[i], x, y)
+      }
+
+      // 画出用户昵称
+      ctx.fillText(that.userInfo.nickName, cardOptions.nickname_pos[0], cardOptions.nickname_pos[1])
+
+      // 头像
+      ctx.drawImage(defaultOptions.portraitPath, cardOptions.head_pos[0], cardOptions.head_pos[1], cardOptions.head_width, cardOptions.head_height);
+
+    // 引导使用
+      ctx.setFontSize(24)
+      ctx.setFillStyle('#969595')
+      ctx.setTextAlign('center')
+      ctx.fillText(that.followText[0], cardOptions.bg_width * 0.90, cardOptions.bg_height * 0.95)
+      ctx.fillText(that.followText[1], cardOptions.bg_width * 0.90, cardOptions.bg_height * 0.95+40)
+      //二维码
+    //   ctx.drawImage(options.codePath, cardOptions.code_pos[0], cardOptions.code_pos[1], cardOptions.code_width, cardOptions.code_height);
+
+      //图片输出
+      ctx.draw(false, function (res) {
+        wx.canvasToTempFilePath({
+          x: 0,
+          y: 0,
+          width: cardOptions.bg_width,
+          height: cardOptions.bg_height,
+          destWidth: cardOptions.bg_width,
+          destHeight: cardOptions.bg_height,
+          canvasId: 'marriged',
+          success: function (res) {
+            _this.setData({
+              isLoading: false
+            })
+            console.log(res.tempFilePath);
+            wx.hideLoading();
+            callback(res.tempFilePath);
+
+          }
+        })
+      })
+    } catch (err) {
+      wx.hideLoading();
+      wx.showModal({
+        title: '提示',
+        content: '当前微信版本过低，无法使用该功能，请升级到最新微信版本后重试。'
+      });
+    }
+  },
+  //回首页
+  goHomePage: function () {
+    wx.redirectTo({
+      url: '/pages/index/index'
+    })
+  },
+  //邀请朋友
+  onShareAppMessage: function (res) {
+    return {
+      title: '哇！这”答案之页“好神奇啊',
+      path: '/pages/answer-book/answer-book',
+      success: function (res) {
+        // 转发成功
+      },
+      fail: function (res) {
+        // 转发失败
+      }
+    }
+  },
+  //保存图片
+  savePic: function (e) {
+    wx.showModal({
+      title: '提示',
+      content: '确定保存图片？',
+      success: function (res) {
+        if (res.confirm) {
+          wx.canvasToTempFilePath({
+            x: 0,
+            y: 0,
+            width: defaultOptions.bg_width,
+            height: defaultOptions.bg_height,
+            canvasId: 'marriged',
+            success: function (res) {
+              util.savePicToAlbum(res.tempFilePath)
+            }
+          })
+        }
+      }
+    })
+
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    const that = this
+    wx.getSystemInfo({
+      success: function (res) {
+        that.setData({
+          windowWidth: res.windowWidth,
+          windowHeight: res.windowHeight,
+        })
+      }
+    })
+    wx.getUserInfo({
+      success: function (res) {
+        console.log(res)
+        that.setData({
+          userInfo: res.userInfo
+        })
+        defaultOptions.nickName = res.userInfo.nickName;
+        that.loadPortraitPath(res.userInfo.avatarUrl)
+        // that.setData({
+        //   defaultName: res.userInfo.nickName
+        // })
+      }
+    })
+    var scene_img = 'that.data.inviteCardUrl'     //这里添加图片的地址
+    that.setData({
+      scene: scene_img
+    })
+
+
+  },
+
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+})
